@@ -1,0 +1,25 @@
+type Pagamento {
+    id: ID!
+    valor: Float!
+    data: String!
+    status: String!
+    fatura: Fatura
+}
+
+type Fatura {
+    id: ID!
+    valor: Float!
+    plano: String!
+    vencimento: String!
+    status: String!
+}
+
+type Query {
+    getPagamentoPorId(id: ID!): Pagamento
+}
+
+type Mutation {
+    novoPagamento(valor: String!, faturaId: ID!): Pagamento
+
+    confirmaPagamento(id: ID!): Boolean!
+}

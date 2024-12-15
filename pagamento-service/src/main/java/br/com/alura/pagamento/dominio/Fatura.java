@@ -1,27 +1,19 @@
-package br.com.alura.fatura.dominio;
+package br.com.alura.pagamento.dominio;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Entity
 public class Fatura {
-
-    @Id
     private Long id;
-    private Long clienteId;
 
     private BigDecimal valor;
     private String plano;
     private LocalDate vencimento;
 
-    @Enumerated(EnumType.STRING)
-    private StatusFatura status;
-
+    private String status;
 
     public Long getId() {
         return id;
@@ -31,12 +23,12 @@ public class Fatura {
         this.id = id;
     }
 
-    public Long getClienteId() {
-        return clienteId;
+    public BigDecimal getValor() {
+        return valor;
     }
 
-    public void setClienteId(Long clienteId) {
-        this.clienteId = clienteId;
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
     }
 
     public String getPlano() {
@@ -55,19 +47,11 @@ public class Fatura {
         this.vencimento = vencimento;
     }
 
-    public StatusFatura getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(StatusFatura status) {
+    public void setStatus(String status) {
         this.status = status;
-    }
-
-    public BigDecimal getValor() {
-        return valor;
-    }
-
-    public void setValor(BigDecimal valor) {
-        this.valor = valor;
     }
 }

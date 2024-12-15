@@ -8,6 +8,7 @@ import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -17,6 +18,7 @@ public class FaturaComClienteDtoSaida {
     private Long id;
 
     private String plano;
+    private BigDecimal valor;
     private LocalDate vencimento;
 
     private StatusFatura status;
@@ -26,6 +28,7 @@ public class FaturaComClienteDtoSaida {
     public FaturaComClienteDtoSaida(Fatura fatura, Cliente cliente) {
         this.id = fatura.getId();
         this.plano = fatura.getPlano();
+        this.valor = fatura.getValor();
         this.vencimento = fatura.getVencimento();
         this.status = fatura.getStatus();
         this.cliente = cliente;
