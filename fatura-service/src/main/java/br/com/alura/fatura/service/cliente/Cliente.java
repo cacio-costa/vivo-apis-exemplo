@@ -1,4 +1,4 @@
-package br.com.alura.fatura.service;
+package br.com.alura.fatura.service.cliente;
 
 public class Cliente {
 

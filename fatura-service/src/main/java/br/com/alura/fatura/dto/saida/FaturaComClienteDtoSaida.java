@@ -2,9 +2,8 @@ package br.com.alura.fatura.dto.saida;
 
 import br.com.alura.fatura.dominio.Fatura;
 import br.com.alura.fatura.dominio.StatusFatura;
-import br.com.alura.fatura.service.Cliente;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import br.com.alura.fatura.service.cliente.Cliente;
+import br.com.alura.fatura.service.plano.Plano;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -17,7 +16,8 @@ public class FaturaComClienteDtoSaida {
 
     private Long id;
 
-    private String plano;
+    private Plano plano;
+
     private BigDecimal valor;
     private LocalDate vencimento;
 
@@ -25,12 +25,13 @@ public class FaturaComClienteDtoSaida {
 
     private Cliente cliente;
 
-    public FaturaComClienteDtoSaida(Fatura fatura, Cliente cliente) {
+    public FaturaComClienteDtoSaida(Fatura fatura, Cliente cliente, Plano plano) {
         this.id = fatura.getId();
-        this.plano = fatura.getPlano();
         this.valor = fatura.getValor();
         this.vencimento = fatura.getVencimento();
         this.status = fatura.getStatus();
+
+        this.plano = plano;
         this.cliente = cliente;
     }
 
@@ -42,11 +43,11 @@ public class FaturaComClienteDtoSaida {
         this.id = id;
     }
 
-    public String getPlano() {
+    public Plano getPlano() {
         return plano;
     }
 
-    public void setPlano(String plano) {
+    public void setPlano(Plano plano) {
         this.plano = plano;
     }
 
@@ -72,5 +73,13 @@ public class FaturaComClienteDtoSaida {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
     }
 }

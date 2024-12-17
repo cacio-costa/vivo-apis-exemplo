@@ -14,9 +14,9 @@ public class Fatura {
     @Id
     private Long id;
     private Long clienteId;
+    private Long planoId;
 
     private BigDecimal valor;
-    private String plano;
     private LocalDate vencimento;
 
     @Enumerated(EnumType.STRING)
@@ -39,12 +39,12 @@ public class Fatura {
         this.clienteId = clienteId;
     }
 
-    public String getPlano() {
-        return plano;
+    public Long getPlanoId() {
+        return planoId;
     }
 
-    public void setPlano(String plano) {
-        this.plano = plano;
+    public void setPlanoId(Long planoId) {
+        this.planoId = planoId;
     }
 
     public LocalDate getVencimento() {

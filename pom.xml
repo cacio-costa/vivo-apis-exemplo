@@ -12,6 +12,8 @@
         <module>cliente-service</module>
         <module>fatura-service</module>
         <module>pagamento-service</module>
+        <module>plano-service</module>
+        <module>plano-service-grpc-interface</module>
     </modules>
 
     <parent>

@@ -1,6 +1,6 @@
 create table fatura (
     id bigserial not null,
-    plano varchar(255) not null,
+    plano_id bigint not null,
     valor decimal(10,2) not null default 0,
     vencimento date not null,
     status varchar(255) not null,

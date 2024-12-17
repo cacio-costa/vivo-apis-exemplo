@@ -1,4 +1,4 @@
-package br.com.alura.fatura.service;
+package br.com.alura.fatura.service.cliente;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
