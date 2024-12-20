@@ -31,16 +31,17 @@ public class ClienteController {
     }
 
     @GetMapping("/{id}")
-    public EntityModel<Cliente> getClienteById(@PathVariable Long id) {
-        throw new RuntimeException("Erro inesperado");
-//        Link self = Link.of("http://localhost:8080/v1/clientes/" + id, "self");
-//        Link all = Link.of("http://localhost:8080/v1/clientes", "all");
-//        Link planos = Link.of("http://localhost:8080/v1/clientes/" + id + "/planos", "planos");
-//
-//
-//        return clienteService.porId(id)
-//                .map(cliente -> EntityModel.of(cliente, self, all, planos))
-//                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente not found"));
+    public EntityModel<Cliente> getClienteById(@PathVariable Long id) throws InterruptedException {
+        Thread.sleep(3000);
+
+        Link self = Link.of("http://localhost:8080/v1/clientes/" + id, "self");
+        Link all = Link.of("http://localhost:8080/v1/clientes", "all");
+        Link planos = Link.of("http://localhost:8080/v1/clientes/" + id + "/planos", "planos");
+
+
+        return clienteService.porId(id)
+                .map(cliente -> EntityModel.of(cliente, self, all, planos))
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente not found"));
     }
 
     @PostMapping()
