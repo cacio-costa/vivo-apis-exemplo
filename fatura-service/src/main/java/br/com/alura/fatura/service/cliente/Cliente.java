@@ -5,6 +5,14 @@ public class Cliente {
     private Long id;
     private String nome;
 
+    public Cliente() {
+    }
+
+    public Cliente(Long id) {
+        this.id = id;
+    }
+
+
     public Long getId() {
         return id;
     }

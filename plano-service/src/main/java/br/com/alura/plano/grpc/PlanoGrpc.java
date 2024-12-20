@@ -9,11 +9,8 @@ import br.com.alura.plano.dominio.PlanoRepository;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
-import io.micrometer.observation.Observation;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.function.Function;
 
 @GrpcService
 public class PlanoGrpc extends PlanoServiceGrpc.PlanoServiceImplBase {

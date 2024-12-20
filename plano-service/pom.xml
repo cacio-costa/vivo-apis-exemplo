@@ -24,8 +24,6 @@
             <artifactId>grpc-server-spring-boot-starter</artifactId>
             <version>3.1.0.RELEASE</version>
         </dependency>
-
-
         <dependency>
             <groupId>br.com.alura.plano</groupId>
             <artifactId>plano-service-grpc-interface</artifactId>
